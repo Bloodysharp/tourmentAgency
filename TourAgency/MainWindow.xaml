@@ -1,0 +1,196 @@
+﻿<Window x:Class="TourAgency.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TourAgency"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        WindowStartupLocation="CenterScreen" Background="Transparent"
+        WindowStyle="None" AllowsTransparency="True" Height="780" Width="1280">
+    <Window.Resources>
+        <!--notify source-->
+        <LinearGradientBrush x:Key="RedGradient" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Offset="0" Color="#602D30" />
+            <GradientStop Offset="0.4" Color="#20232E" />
+        </LinearGradientBrush>
+
+
+        <LinearGradientBrush x:Key="GreenGradient" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Offset="0" Color="#1D4F28" />
+            <GradientStop Offset="0.4" Color="#20232E" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="YellowGradient" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Offset="0" Color="#5D4E1E" />
+            <GradientStop Offset="0.4" Color="#20232E" />
+        </LinearGradientBrush>
+
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Window.Resources>
+    <Grid>
+        <!--Grid Background-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="25 0 0 25" Width="220">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#343155" Offset="0" />
+                        <GradientStop Color="#3B2E58" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Border CornerRadius="0 25 25 0" MouseDown="Border_MouseDown" Grid.Column="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#3E3A65" Offset="0" />
+                        <GradientStop Color="#473765" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Grid>
+
+        <!--Grid Controls-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Main Menu-->
+            <StackPanel Width="240">
+                <StackPanel Orientation="Horizontal" Margin="0 50 20 40" HorizontalAlignment="Center">
+                    <fa:ImageAwesome Icon="PaperPlaneOutline" Foreground="White" Width="30"/>
+                    <TextBlock Text="Туристическое&#10; Агенство" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="#FFFFFF"/>
+                </StackPanel>
+
+                <Button Style="{StaticResource activeMenuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="Hotel" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Отели" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="Comment" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Комментарии" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Name="sal" Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="AddressBook" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Туры" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="Plane" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Страны" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+
+                <!--<Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="CommentOutline" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Messages" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="Television" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Monitoring" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="CreditCard" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="My Cards" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>-->
+
+                <Separator Background="#e0e0e0" Opacity="0.5" Margin="50 15 60 15"/>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="FolderOutlinepenOutline" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Аккаунт" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="CircleOutlineNotch" Style="{StaticResource buttonIcon}" />
+                            <TextBlock Text="Выход" Style="{StaticResource buttonText}" />
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
+                    </Grid>
+                </Button>
+            </StackPanel>
+
+            <!--Transaction Panel-->
+            <Grid Grid.Column="1">
+               
+               
+              
+            </Grid>
+
+            <!--Info Panel-->
+            <StackPanel Grid.Column="2" Margin="0 0 20 0">
+
+                <!--Top Menu-->
+                <StackPanel Orientation="Horizontal" Margin="20 40 20 0" HorizontalAlignment="Right">
+
+                 
+
+                </StackPanel>
+
+         
+                
+             
+
+                
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
+
