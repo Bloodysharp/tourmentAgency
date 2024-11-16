@@ -1,0 +1,65 @@
+﻿<Page x:Class="TourAgency.Pages.HotelsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TourAgency.Pages" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HotelsPage"
+      >
+    <Page.Resources>
+        <!--notify source-->
+        <LinearGradientBrush x:Key="RedGradient" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Offset="0" Color="#602D30" />
+            <GradientStop Offset="0.4" Color="#20232E" />
+        </LinearGradientBrush>
+
+
+        <LinearGradientBrush x:Key="GreenGradient" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Offset="0" Color="#1D4F28" />
+            <GradientStop Offset="0.4" Color="#20232E" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="YellowGradient" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Offset="0" Color="#5D4E1E" />
+            <GradientStop Offset="0.4" Color="#20232E" />
+        </LinearGradientBrush>
+
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="DGridHotels" AutoGenerateColumns="False" IsReadOnly="True" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="НАЗВАНИЕ ОТЕЛЯ" Binding="{Binding hotelName}" Width="*" />
+                <DataGridTextColumn Header="РЕЙТИНГ" Binding="{Binding countOfStars}" Width="*"/>
+                <DataGridTextColumn Header="СТРАНА" Binding="{Binding countryCode}" Width="*" />
+                <DataGridTemplateColumn Header="ОПЕРАЦИИ" IsReadOnly="True" Width="auto" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource gridEditButton}" Click="ButtonEdit_Click" >
+
+                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
+                                </Button>
+                                <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Click="ButtonAdd_Click" >
+
+                                    <Icon:PackIconMaterial Kind="Plus" Style="{StaticResource gridButtonIcon}"/>
+                                </Button>
+
+                                <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Click="ButtonDel_Click">
+                                    <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

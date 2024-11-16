@@ -8,7 +8,7 @@
         Title="MainWindow" 
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         WindowStartupLocation="CenterScreen" Background="Transparent"
-        WindowStyle="None" AllowsTransparency="True" Height="780" Width="1280">
+        WindowStyle="None" AllowsTransparency="True" Height="650" Width="1100">
     <Window.Resources>
         <!--notify source-->
         <LinearGradientBrush x:Key="RedGradient" StartPoint="0,0" EndPoint="1,0">
@@ -61,7 +61,6 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <!--Main Menu-->
@@ -71,7 +70,7 @@
                     <TextBlock Text="Туристическое&#10; Агенство" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="#FFFFFF"/>
                 </StackPanel>
 
-                <Button Style="{StaticResource activeMenuButton}">
+                <Button Style="{StaticResource activeMenuButton}" Click="ButtonHotels_Click">
                     <Grid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                             <fa:ImageAwesome Icon="Hotel" Style="{StaticResource buttonIcon}" />
@@ -81,7 +80,7 @@
                     </Grid>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button Style="{StaticResource menuButton}" Click="ButtonComments_Click">
                     <Grid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                             <fa:ImageAwesome Icon="Comment" Style="{StaticResource buttonIcon}" />
@@ -91,7 +90,7 @@
                     </Grid>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button Style="{StaticResource menuButton}" Click="ButtonTours_Click">
                     <Grid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                             <fa:ImageAwesome Icon="AddressBook" Style="{StaticResource buttonIcon}" />
@@ -101,7 +100,7 @@
                     </Grid>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button Style="{StaticResource menuButton}" Click="ButtonCountry_Click">
                     <Grid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                             <fa:ImageAwesome Icon="Plane" Style="{StaticResource buttonIcon}" />
@@ -111,36 +110,7 @@
                     </Grid>
                 </Button>
 
-                <!--<Button Style="{StaticResource menuButton}">
-                    <Grid>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <fa:ImageAwesome Icon="CommentOutline" Style="{StaticResource buttonIcon}" />
-                            <TextBlock Text="Messages" Style="{StaticResource buttonText}" />
-                        </StackPanel>
-                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
-                    </Grid>
-                </Button>
-
-                <Button Style="{StaticResource menuButton}">
-                    <Grid>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <fa:ImageAwesome Icon="Television" Style="{StaticResource buttonIcon}" />
-                            <TextBlock Text="Monitoring" Style="{StaticResource buttonText}" />
-                        </StackPanel>
-                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
-                    </Grid>
-                </Button>
-
-                <Button Style="{StaticResource menuButton}">
-                    <Grid>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <fa:ImageAwesome Icon="CreditCard" Style="{StaticResource buttonIcon}" />
-                            <TextBlock Text="My Cards" Style="{StaticResource buttonText}" />
-                        </StackPanel>
-                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Style="{StaticResource buttonIconExpand}" />
-                    </Grid>
-                </Button>-->
-
+               
                 <Separator Background="#e0e0e0" Opacity="0.5" Margin="50 15 60 15"/>
 
                 <Button Style="{StaticResource menuButton}">
@@ -153,7 +123,7 @@
                     </Grid>
                 </Button>
 
-                <Button Style="{StaticResource menuButton}">
+                <Button Style="{StaticResource menuButton}" Click="ButtonShutDown_Click">
                     <Grid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                             <fa:ImageAwesome Icon="CircleOutlineNotch" Style="{StaticResource buttonIcon}" />
@@ -164,30 +134,14 @@
                 </Button>
             </StackPanel>
 
-            <!--Transaction Panel-->
+            
             <Grid Grid.Column="1">
-               
-               
-              
+                <Frame x:Name="MainFrame" Margin="10,145,10,10"/>
+
+
             </Grid>
 
-            <!--Info Panel-->
-            <StackPanel Grid.Column="2" Margin="0 0 20 0">
-
-                <!--Top Menu-->
-                <StackPanel Orientation="Horizontal" Margin="20 40 20 0" HorizontalAlignment="Right">
-
-                 
-
-                </StackPanel>
-
-         
-                
-             
-
-                
-
-            </StackPanel>
+           
 
         </Grid>
 

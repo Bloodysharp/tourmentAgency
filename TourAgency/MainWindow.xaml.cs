@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TourAgency.Classes;
 
 namespace TourAgency
 {
@@ -22,6 +23,7 @@ namespace TourAgency
         public MainWindow()
         {
             InitializeComponent();
+            Manager.MainFrame = MainFrame;
         }
         private void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -29,5 +31,27 @@ namespace TourAgency
                 this.DragMove();
         }
 
+        private void ButtonHotels_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Pages.HotelsPage());
+            
+        }
+        private void ButtonComments_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ButtonTours_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ButtonCountry_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonShutDown_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

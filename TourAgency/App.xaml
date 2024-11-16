@@ -8,6 +8,7 @@
             <FontFamily x:Key="Nevan">./Fonts/Nevan.ttf#Nevan Bold</FontFamily>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/UIStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/DataGridStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Lime.xaml"/>
