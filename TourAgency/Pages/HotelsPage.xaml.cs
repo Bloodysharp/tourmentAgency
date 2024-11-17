@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TourAgency.Classes;
 using TourAgency.CustomNotify;
 using TourAgency.Data;
 
@@ -30,11 +31,11 @@ namespace TourAgency.Pages
 
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new Pages.Edit.Editing((sender as Button).DataContext as Hotel));
         }
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new Pages.Edit.Editing(null));
         }
         private SolidColorBrush HextoSolidBrush(string Hex)
         {
